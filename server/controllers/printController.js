@@ -4,7 +4,7 @@ async function sendFile(req, res, next) {
     try {
         const sendFile = await printService.sendFile(req.body);
         if (sendFile.success) {
-            res.json(sendFile);
+            res.status(200).json(sendFile);
         } else {
             res.status(400).json(sendFile);
         }
