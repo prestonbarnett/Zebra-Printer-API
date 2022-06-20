@@ -3,7 +3,7 @@
 ^FX QR Code
 ^FO45,35
 ^BQN,2,3,Q
-^FDhttps://epiccompaniesus.sharepoint.com/sites/lifesupport/Inspections/Forms/AllItems.aspx^FS
+^FDurlhttp://localhost:5000/short/rRt0LOAfy^FS
 
 ^FX Top Section Text
 ^CF0,45
@@ -11,21 +11,21 @@
 ^CF0,35
 ^FO235,100^FDINSPECTION LABEL^FS
 ^CFA,15
-^FO235,150^FDGenerated On: June 17th 2022, 2:39:26 pm^FS
-^FO235,180^FDPrinter: D0N211900284^FS
+^FO235,150^FDGenerated On: June 20th 2022, 3:17:05 pm^FS
+^FO235,180^FDPrinter: ^FS
 
 ^FX Bottom Section Text
 ^CF0,45
-^FO45,250^FDPOS EDELHOFF JUNK^FS
-^FO45,300^FDESA-123^FS
+^FO45,250^FD^FS
+^FO45,300^FD^FS
 ^CFA,15
-^FO45,360^FDInspected By: T. PERRY^FS
-^FO45,390^FDApproved By: P. BARNETT^FS
+^FO45,360^FDInspected By: ^FS
+^FO45,390^FDApproved By: ^FS
 ^FO45,430^GB700,3,3^FS
 
-^TBN,500,75
+^TBN,500,150
 ^FO45,460^FD
-Comments: This is a test of dynamically generated content using my custom Zebra proxy API. This is currently only running on my localhost, but I hope to run it on a public-facing server soon.
+Comments: 
 ^FS
 
 ^FO25,25

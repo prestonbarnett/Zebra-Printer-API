@@ -2,9 +2,14 @@ const printService = require('../services/printService');
 
 async function sendFile(req, res, next) {
     try {
-        res.json(await printService.sendFile(req.body));
+        const sendFile = await printService.sendFile(req.body);
+        if (sendFile.success) {
+            res.json(sendFile);
+        } else {
+            res.status(400).json(sendFile);
+        }
     } catch (err) {
-        console.error(`Error while getting programming languages`, err.message);
+        console.error('Canont send file to printer', err.message);
         next(err);
     }
 }
@@ -28,25 +33,25 @@ module.exports = {
 //             dataStr = dataStr.replace(pattern, param);
 //         });
 
-//         fs.writeFile('test.zpl', dataStr, (err) => {
-//             let printData = new FormData();
-//             printData.append('sn', 'D0N211900284');
-//             printData.append('zpl_file', fs.createReadStream('test.zpl'));
+        // fs.writeFile('test.zpl', dataStr, (err) => {
+        //     let printData = new FormData();
+        //     printData.append('sn', 'D0N211900284');
+        //     printData.append('zpl_file', fs.createReadStream('test.zpl'));
     
-//             axios({
-//                 method: 'post',
-//                 url: 'https://api.zebra.com/v2/devices/printers/send',
-//                 data: printData,
-//                 headers: {
-//                     'Content-Type': 'multipart/form-data',
-//                     'apikey': process.env.API_KEY,
-//                     'tenant': process.env.API_TENANT
-//                 }
-//             }).then(response => {
-//                 return res.send(response.data);
-//             }).catch(error => {
-//                 return res.send(error.response.data);
-//             });    
-//         });
+        //     axios({
+        //         method: 'post',
+        //         url: 'https://api.zebra.com/v2/devices/printers/send',
+        //         data: printData,
+        //         headers: {
+        //             'Content-Type': 'multipart/form-data',
+        //             'apikey': process.env.API_KEY,
+        //             'tenant': process.env.API_TENANT
+        //         }
+        //     }).then(response => {
+        //         return res.send(response.data);
+        //     }).catch(error => {
+        //         return res.send(error.response.data);
+        //     });    
+        // });
 //     });
 // });
